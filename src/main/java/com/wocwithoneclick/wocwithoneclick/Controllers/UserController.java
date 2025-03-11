@@ -36,6 +36,11 @@ public class UserController {
     public  ResponseEntity<User> getUserById(@PathVariable long userId) { 
         return  new ResponseEntity<>(userServiceImpl.getUser(userId), HttpStatus.OK); 
     } 
+    
+    @GetMapping("/finduser/{email}/{password}")
+    public ResponseEntity<User> getUserByEmailPassword(@PathVariable String email, String password){
+    	return new ResponseEntity<>(userServiceImpl.getUserByEmailPassword(email, password), HttpStatus.OK);
+    }
   
     @PutMapping("/user/{userId}")
     public ResponseEntity<User> updateUser(@PathVariable long userId, @RequestBody User user) {

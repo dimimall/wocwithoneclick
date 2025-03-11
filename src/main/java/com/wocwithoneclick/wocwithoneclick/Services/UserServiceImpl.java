@@ -53,8 +53,8 @@ public class UserServiceImpl{
 	   }
 
 
-	   public List<User> getUserByName(String firstname, String lastname) {
-	       return userRepository.findByfirstnamelastname(firstname, lastname);
+	   public User getUserByEmailPassword(String email, String password) {
+	       return userRepository.findByEmailPassword(email, password);
 	    }	
     
 }
