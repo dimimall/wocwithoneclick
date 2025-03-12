@@ -37,7 +37,7 @@ public class UserController {
         return  new ResponseEntity<>(userServiceImpl.getUser(userId), HttpStatus.OK); 
     } 
     
-    @GetMapping("/finduser")
+    @PostMapping("/finduser")
     public ResponseEntity<User> getUserByEmailPassword(@RequestBody User user){
     	return new ResponseEntity<>(userServiceImpl.getUserByEmailPassword(user.getEmail(), user.getPassword()), HttpStatus.OK);
     }
