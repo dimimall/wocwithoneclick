@@ -4,17 +4,15 @@ import org.springframework.stereotype.Repository;
 
 import com.wocwithoneclick.wocwithoneclick.Models.User;
 
-import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
 		
-	
-	@Query(value = "SELECT * FROM User WHERE email = ?1 AND password = ?1", nativeQuery = true)
-    User findByEmailPassword(String email, String password);
+    User findByEmail(String email);
+    
+    User findByPassword(String password);
 
 }

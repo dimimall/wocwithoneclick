@@ -37,9 +37,13 @@ public class UserController {
         return  new ResponseEntity<>(userServiceImpl.getUser(userId), HttpStatus.OK); 
     } 
     
-    @PostMapping("/finduser")
-    public ResponseEntity<User> getUserByEmailPassword(@RequestBody User user){
-    	return new ResponseEntity<>(userServiceImpl.getUserByEmailPassword(user.getEmail(), user.getPassword()), HttpStatus.OK);
+    @GetMapping("/finduser/{email}")
+    public ResponseEntity<User> getUserByEmailPassword(@PathVariable String email){
+    	ResponseEntity<User>  user = null;
+    	
+    	if (!userServiceImpl.getUserByEmail(email).getEmail().isEmpty())
+    		user =  new ResponseEntity<>(userServiceImpl.getUserByEmail(email), HttpStatus.OK);
+    	return user;
     }
   
     @PutMapping("/user/{userId}")

@@ -53,8 +53,12 @@ public class UserServiceImpl{
 	   }
 
 
-	   public User getUserByEmailPassword(String email, String password) {
-	       return userRepository.findByEmailPassword(email, password);
-	    }	
+	   public User getUserByEmail(String email) {
+	       return userRepository.findByEmail(email);
+	   }	
+	   
+	   public User getUserByPassword(String password) {
+	       return userRepository.findByPassword(password);
+	   }
     
 }
