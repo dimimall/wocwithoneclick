@@ -15,19 +15,19 @@ public class User {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "userId")
+	@Column(name = "userId",nullable = false)
     private long userId;
-	@Column(name = "firstname")
+	@Column(name = "firstname",nullable = true)
 	private String firstname;
-	@Column(name = "lastname")
+	@Column(name = "lastname",nullable = true)
 	private String lastname;
-	@Column(name = "email")
+	@Column(name = "email",nullable = false)
 	private String email;
-	@Column(name = "password")
+	@Column(name = "password",nullable = false)
 	private String password;
-	@Column(name = "base64Image",length = 2048)
+	@Column(name = "base64Image",length = 2048,nullable = true)
 	private String base64Image;
-	@Column(name = "address")
+	@Column(name = "address",nullable = true)
 	private String address;
 	
 	
