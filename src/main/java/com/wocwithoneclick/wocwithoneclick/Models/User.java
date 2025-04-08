@@ -1,33 +1,36 @@
 package com.wocwithoneclick.wocwithoneclick.Models;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
-
-@Entity
 @Table(name = "\"User\"")
 public class User {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "userId",nullable = false)
+	@Column(value = "userId")
+	@NotNull
     private long userId;
-	@Column(name = "firstname",nullable = true)
+	@Column(value = "firstname")
+	@Null
 	private String firstname;
-	@Column(name = "lastname",nullable = true)
+	@Column(value = "lastname")
+	@Null
 	private String lastname;
-	@Column(name = "email",nullable = false)
+	@Column(value = "email")
+	@NotNull
 	private String email;
-	@Column(name = "password",nullable = false)
+	@Column(value = "password")
+	@NotNull
 	private String password;
-	@Column(name = "base64Image",length = 2048,nullable = true)
+	@Column(value = "base64Image")
+	@Null
 	private String base64Image;
-	@Column(name = "address",nullable = true)
+	@Column(value = "address")
+	@Null
 	private String address;
 	
 	

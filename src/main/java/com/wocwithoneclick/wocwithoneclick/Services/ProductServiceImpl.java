@@ -26,7 +26,7 @@ public class ProductServiceImpl {
 
 
 	   public List<Product> getProducts() {
-	       return productRepository.findAll();
+	       return (List<Product>) productRepository.findAll();
 	   }
 
 

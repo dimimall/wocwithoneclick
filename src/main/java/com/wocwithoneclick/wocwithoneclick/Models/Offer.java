@@ -1,25 +1,16 @@
 package com.wocwithoneclick.wocwithoneclick.Models;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-
-@Entity
 @Table(name = "\"Offer\"")
 public class Offer {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long offerId;
 	private long userId;
 	private String title;
 	private String description;
-	@Column(length = 2048)
 	private String base64Offer;
 	private boolean active;
 	

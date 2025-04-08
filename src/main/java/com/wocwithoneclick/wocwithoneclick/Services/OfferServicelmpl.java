@@ -20,7 +20,7 @@ public class OfferServicelmpl{
 	}
 	
 	public List<Offer> getAllOffers() {
-		return offerRepository.findAll();
+		return (List<Offer>) offerRepository.findAll();
 	}
 	
 	public List<Offer> getAllActiveOffersByUser(long userId, boolean active){

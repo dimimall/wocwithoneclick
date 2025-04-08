@@ -1,19 +1,12 @@
 package com.wocwithoneclick.wocwithoneclick.Models;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-
-@Entity
 @Table(name = "\"Product\"")
 public class Product {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long productId;
 	private long categoryId;
 	private long userId;

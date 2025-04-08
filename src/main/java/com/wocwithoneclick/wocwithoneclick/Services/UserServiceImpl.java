@@ -29,7 +29,7 @@ public class UserServiceImpl{
 
 
 	   public List<User> getUser() {
-	       return userRepository.findAll();
+	       return (List<User>) userRepository.findAll();
 	   }
 
 

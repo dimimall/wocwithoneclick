@@ -1,21 +1,18 @@
 package com.wocwithoneclick.wocwithoneclick.Models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
-@Entity
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
+
+
 @Table(name = "Category")
 public class Category {
  
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "categoryID")
+	@Column(value = "categoryID")
 	private long categoryID;
-	@Column(name = "categoryName")
+	@Column(value = "categoryName")
 	private String categoryName;
 	
 	
